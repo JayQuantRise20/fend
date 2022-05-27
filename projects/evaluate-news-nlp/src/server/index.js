@@ -3,6 +3,9 @@ dotenv.config();
 
 var aylien = require("aylien_textapi");
 
+console.log(`Your API key is ${process.env.API_KEY}`);
+
+
 
 var path = require('path')
 const express = require('express')
@@ -14,11 +17,14 @@ var textapi = new aylien({
     application_key: process.env.API_KEY
  });
 
+
 app.use(express.static('dist'))
 
 console.log(__dirname)
 
 // You could call it aylienapi, or anything else
+
+
 
 
 app.get('/', function (req, res) {
